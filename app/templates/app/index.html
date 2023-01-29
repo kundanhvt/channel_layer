@@ -21,7 +21,7 @@
     </div>
     <script>
         const groupName = JSON.parse(document.getElementById("group-name").textContent)
-        var ws = new WebSocket('ws://127.0.0.1:8000/ws/ac/'+groupName+'/')
+        var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/'+groupName+'/')
         ws.onopen = function(){
             console.log('WebSocket Connection Open..')
         }

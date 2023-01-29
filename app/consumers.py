@@ -5,6 +5,7 @@ from .models import Group, Chat
 import json
 import asyncio
 from channels.db import database_sync_to_async
+from .decorator import is_authenticated
 
 class MySyncConsumer(SyncConsumer):
 	def websocket_connect(self, event):
@@ -18,6 +19,7 @@ class MySyncConsumer(SyncConsumer):
 		async_to_sync(self.channel_layer.group_add)(self.group_name,self.channel_name)
 		
 	def websocket_receive(self, event):
+		breakpoint()
 		print('Messaged Received...', event)
 		print('Messaged is ', event['text'])
 		data = json.loads(event['text'])
