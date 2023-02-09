@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from .models import Chat, Group
 # Create your views here.
+import logging
+ 
+logger = logging.getLogger(__name__)
 
 def home(request, group_name):
+    logger.info('kundan')
     group, resp = Group.objects.get_or_create(name = group_name)
     chats = []
     if group.has_group:
