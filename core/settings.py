@@ -75,13 +75,14 @@ DATABASES = {
 
 
 CHANNEL_LAYERS = {
+    # "default": {
+    #     "BACKEND": "channels_redis.core.RedisChannelLayer",
+    #     "CONFIG": {
+    #        "hosts": [("20.193.158.129", 6379)],
+    #    },
+    # }
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-           "hosts": [("20.193.158.129", 6379)],
-        #    "hosts": [("redis://:QpOtpaLzGrvZVEdUzx3NAlTGCDsFdEkR@redis-12501.c301.ap-south-1-1.ec2.cloud.redislabs.com:12501/0")],
-        #    'hosts':[("redis://127.0.0.1:6379/0")]
-       },
+      "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
 }
 
